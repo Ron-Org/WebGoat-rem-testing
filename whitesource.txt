@@ -1,0 +1,66 @@
+Configuration:
+{
+ "scanSettingsSAST": {
+	"enableScan": true,
+	"scanPullRequests": true,
+	"incrementalScan": true
+    }
+}
+
+
+// inc set to false to turn off 
+
+Steps:
+
+1. Create baseline scan
+   Direct commit to default branch 
+
+2. Do a change in one of  files java
+   // for instance, duplicate some lines of code
+
+3.Click on:
+   Create new branch  for this commit ...
+   demo-branch
+
+4.Click on Propose changes
+
+5.Click Create Pull request
+
+6.Verify if inc scan runned
+
+7.Merge  Pull request  - here will be baseline scan 
+
+
+first check if incremental scanning is enabled on dev environment ? 
+
+check :
+1 "incrementalScan": true     // should work
+2 "incrementalScan": false    // should not work
+3) when you change not java file (e.g : readme file) the sacn should not work
+
+
+PRD-5105
+
+WSAP-738
+
+GHC - Limit Scan Trigger to Source Code Relevant Files
+
+5)PRD-5105
+
+WSAP-689
+
+Hide Scans on Feature Branches
+ 
+Success Criteria:
+See scan did it run in Dashboard with SYSTEM ACCESS 
+
+
+--------------------------------------------------------------------------
+
+
+
+
+Important!!!
+Scans from feature branch won't be visible in UI if user doesn't have SYSTEM ACCESS
+Only scans set to false on incremental scan in main branch will be visible
+All commits on base-branch - new baseline will be  uploaded for incremental scans to use it
