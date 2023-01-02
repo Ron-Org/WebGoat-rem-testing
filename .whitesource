@@ -1,0 +1,8 @@
+{
+ "scanSettingsSAST": {
+	"enableScan": true,
+	"scanPullRequests": true,
+	"incrementalScan": false,
+	"enableRemediation": true
+    }
+}
